@@ -1,86 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Bukovce E-Commerce</title>
-    <style>
-        /* Styling for header, navigation, categories, products, and footer (same as previous code) */
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .product-details {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .product-details img {
-            max-width: 40%;
-            height: auto;
-        }
-
-        .product-details h3 {
-            margin-top: 0;
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bukovec E-Commerce</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<style>
+    /* Add your fancy and professional CSS styling here */
+</style>
 </head>
 <body>
-    <header>
-        <h1>Bukovce E-Commerce</h1>
-    </header>
-
-    <nav>
-        <a href="#">Clothes</a>
-        <a href="#">Sport Equipments</a>
-        <a href="#">Electronics</a>
-        <a href="#">Accessories</a>
-    </nav>
-
-    <div class="container">
-        <div class="categories">
-            <!-- Category content (same as previous code) -->
-        </div>
-
-        <div class="products">
-            <div class="product" id="product1">
-                <!-- Product 1 content (same as previous code) -->
-            </div>
-            <div class="product" id="product2">
-                <!-- Product 2 content (same as previous code) -->
-            </div>
-            <div class="product" id="product3">
-                <!-- Product 3 content (same as previous code) -->
-            </div>
-            <div class="product" id="product4">
-                <!-- Product 4 content (same as previous code) -->
-            </div>
-        </div>
-        
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="product-details">
-                    <img id="modal-img" src="" alt="Product">
-                    <div>
-                        <h3 id="modal-title"></h3>
-                        <p id="modal-price"></p>
-                        <button id="modal-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="slider">
+    <div>
+        <img src="clothing.jpg" alt="Clothing" data-product="Clothing">
     </div>
+    <div>
+        <img src="swimming_gear.jpg" alt="Swimming Gear" data-product="Swimming Gear">
+    </div>
+    <div>
+        <img src="football.jpg" alt="Football" data-product="Football">
+    </div>
+    <div>
+        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
+    </div>
+        <div>
+        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
+    </div>
+        <div>
+        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
+    </div>
+        <div>
+        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
+    </div>
+</div>
+<div class="brand-info">
+    <h1>Bukovec</h1>
+    <p>Your one-stop shop for all your sporting needs. From clothing to swimming gear, football equipment, and stylish shirts, we have it all!</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
 
-    <footer>
-        <p>&copy; 2022 Bukovce E-Commerce. All rights reserved.</p>
-    </footer>
-    
-    <script>
-        /* JavaScript code (same as previous code) */
-    </script>
+        $('.slider').on('click', 'img', function(){
+            const product = $(this).data('product');
+            // Add your code to handle the purchase of the clicked product
+            console.log(`Buy ${product}`);
+        });
+    });
+</script>
 </body>
 </html>
