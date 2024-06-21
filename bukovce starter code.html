@@ -1,107 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bukovce E-Commerce</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukovce - Your Online Sports and Clothing Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .category {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .category:hover {
+            transform: scale(1.05);
+        }
+        .category img {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .category button {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .category button:hover {
+            background-color: #555;
+        }
+        .brand-info {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        .carousel-item {
+            min-width: 200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+        .carousel-item:hover {
+            transform: scale(1.05);
+        }
+        .carousel-item img {
+            max-width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>Welcome to Bukovce</h1>
-</header>
-
-<div class="categories">
-  <button onclick="filterCategory('clothing')">Bukovce Clothing</button>
-  <button onclick="filterCategory('sports')">Sport Equipments</button>
-  <button onclick="filterCategory('accessories')">Swimming Accessories</button>
-</div>
-
-<div class="products-container">
-  <div class="product">
-    <img src="clothing1.jpg" alt="Bukovce Clothing">
-    <h3>Bukovce T-shirt</h3>
-    <button onclick="buyProduct('Bukovce T-shirt')">Buy Now</button>
-  </div>
-  <div class="product">
-    <img src="sports1.jpg" alt="Football T-shirt">
-    <h3>Football T-shirt</h3>
-    <button onclick="buyProduct('Football T-shirt')">Buy Now</button>
-  </div>
-  <div class="product">
-    <img src="accessory1.jpg" alt="Swimming Cap">
-    <h3>Swimming Cap</h3>
-    <button onclick="buyProduct('Swimming Cap')">Buy Now</button>
-  </div>
-</div>
-
-<footer>
-  <p>Learn more about Bukovce and our mission...</p>
-</footer>
-
-<script src="script.js"></script>
+    <header>
+        <h1>Welcome to Bukovce</h1>
+        <p>Your one-stop shop for sports gear and clothing</p>
+    </header>
+    <nav>
+        <a href="#sports">Sports</a>
+        <a href="#clothes">Clothes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="category" id="sports">
+            <h2>Sports</h2>
+            <img src="https://via.placeholder.com/300" alt="Sports" onclick="location.href='#'">
+            <p>Explore our wide range of sports equipment and accessories.</p>
+            <button onclick="location.href='#'">Shop Now</button>
+        </div>
+        <div class="category" id="clothes">
+            <h2>Clothes</h2>
+            <img src="https://via.placeholder.com/300" alt="Clothes" onclick="location.href='#'">
+            <p>Discover the latest trends in clothing and fashion.</p>
+            <button onclick="location.href='#'">Shop Now</button>
+        </div>
+    </div>
+    <div class="brand-info">
+        <h2>About Bukovce</h2>
+        <p>At Bukovce, we are committed to providing top-quality sports gear and the latest fashion trends. Our mission is to make sure you are equipped with the best products, whether you're hitting the gym or the streets. Join us on this journey and discover what we have to offer.</p>
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/200" alt="Product 1" onclick="location.href='#'">
+                <p>Product 1</p>
+                <button onclick="location.href='#'">Buy Now</button>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/200" alt="Product 2" onclick="location.href='#'">
+                <p>Product 2</p>
+                <button onclick="location.href='#'">Buy Now</button>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/200" alt="Product 3" onclick="location.href='#'">
+                <p>Product 3</p>
+                <button onclick="location.href='#'">Buy Now</button>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/200" alt="Product 4" onclick="location.href='#'">
+                <p>Product 4</p>
+                <button onclick="location.href='#'">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Bukovce. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-/* styles.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.categories {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.products-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.product {
-  width: 30%;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
-}
-
-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-// script.js
-function filterCategory(category) {
-  const products = document.querySelectorAll('.product');
-  products.forEach(product => {
-    if (product.textContent.includes(category)) {
-      product.style.display = 'block';
-    } else {
-      product.style.display = 'none';
-    }
-  });
-}
-
-function buyProduct(productName) {
-  alert(`You are buying: ${productName}. Payment functionality coming soon!`);
-}
