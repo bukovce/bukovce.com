@@ -1,91 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukovce - Your Online Sports and Clothing Store</title>
+    <title>Bukovce E-Commerce</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+        /* Styling for header */
         header {
             background-color: #333;
-            color: #fff;
-            padding: 20px 0;
+            color: white;
             text-align: center;
+            padding: 1em;
         }
+
+        /* Styling for navigation */
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #f4f4f4;
+            padding: 1em;
         }
+
         nav a {
-            color: #fff;
-            padding: 14px 20px;
+            margin: 0 1em;
+            color: #333;
             text-decoration: none;
-            text-transform: uppercase;
+            font-weight: bold;
         }
-        nav a:hover {
-            background-color: #555;
-        }
-        .container {
+
+        /* Styling for product categories */
+        .categories {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            margin: 20px 0;
         }
+
         .category {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            margin: 1em;
+            padding: 1em;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            padding: 20px;
-            width: 300px;
             text-align: center;
+            width: 200px;
+            background-color: #f9f9f9;
         }
-        .category img {
+
+        .category h2 {
+            color: #333;
+        }
+
+        /* Styling for product listings */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1em;
+            padding: 1em;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1em;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .product img {
             max-width: 100%;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 15px;
+            height: auto;
         }
+
+        /* Styling for footer */
         footer {
             background-color: #333;
-            color: #fff;
-            padding: 20px 0;
+            color: white;
             text-align: center;
+            padding: 1em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Bukovce</h1>
-        <p>Your one-stop shop for sports gear and clothing</p>
+        <h1>Bukovce E-Commerce</h1>
     </header>
+
     <nav>
-        <a href="#sports">Sports</a>
-        <a href="#clothes">Clothes</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Clothes</a>
+        <a href="#">Sport Equipments</a>
+        <a href="#">Electronics</a>
+        <a href="#">Accessories</a>
     </nav>
-    <div class="container">
-        <div class="category" id="sports">
-            <h2>Sports</h2>
-            <img src="https://via.placeholder.com/300" alt="Sports">
-            <p>Explore our wide range of sports equipment and accessories.</p>
-            <button onclick="location.href='#'">Shop Now</button>
-        </div>
-        <div class="category" id="clothes">
+
+    <div class="categories">
+        <div class="category">
             <h2>Clothes</h2>
-            <img src="https://via.placeholder.com/300" alt="Clothes">
-            <p>Discover the latest trends in clothing and fashion.</p>
-            <button onclick="location.href='#'">Shop Now</button>
+            <p>Shop the latest fashion trends</p>
+        </div>
+        <div class="category">
+            <h2>Sport Equipments</h2>
+            <p>Gear up for your favorite sport</p>
+        </div>
+        <div class="category">
+            <h2>Electronics</h2>
+            <p>Discover cutting-edge technology</p>
+        </div>
+        <div class="category">
+            <h2>Accessories</h2>
+            <p>Complete your look with stylish accessories</p>
         </div>
     </div>
+
+    <div class="products">
+        <div class="product">
+            <img src="clothes.jpg" alt="Clothes">
+            <h3>Casual T-shirt</h3>
+            <p>$19.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sport.jpg" alt="Sport Equipment">
+            <h3>Basketball</h3>
+            <p>$29.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="electronics.jpg" alt="Electronics">
+            <h3>Wireless Headphones</h3>
+            <p>$99.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="accessories.jpg" alt="Accessories">
+            <h3>Sunglasses</h3>
+            <p>$49.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Bukovce. All rights reserved.</p>
+        <p>&copy; 2022 Bukovce E-Commerce. All rights reserved.</p>
     </footer>
 </body>
 </html>
