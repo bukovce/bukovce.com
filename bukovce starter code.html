@@ -3,76 +3,50 @@
 <head>
     <title>Bukovce E-Commerce</title>
     <style>
-        /* Styling for header */
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
+        /* Styling for header, navigation, categories, products, and footer (same as previous code) */
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Styling for navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #f4f4f4;
-            padding: 1em;
-        }
-
-        nav a {
-            margin: 0 1em;
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Styling for product categories */
-        .categories {
-            display: flex;
-            justify-content: center;
-        }
-
-        .category {
-            margin: 1em;
-            padding: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            width: 200px;
+        .modal-content {
+            position: relative;
+            margin: 10% auto;
+            padding: 20px;
+            width: 70%;
             background-color: #f9f9f9;
-        }
-
-        .category h2 {
-            color: #333;
-        }
-
-        /* Styling for product listings */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1em;
-            padding: 1em;
-        }
-
-        .product {
-            border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 1em;
-            text-align: center;
-            background-color: #f9f9f9;
         }
 
-        .product img {
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .modal-content img {
             max-width: 100%;
             height: auto;
         }
 
-        /* Styling for footer */
-        footer {
+        .modal-content button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
             background-color: #333;
             color: white;
-            text-align: center;
-            padding: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -89,53 +63,62 @@
     </nav>
 
     <div class="categories">
-        <div class="category">
-            <h2>Clothes</h2>
-            <p>Shop the latest fashion trends</p>
-        </div>
-        <div class="category">
-            <h2>Sport Equipments</h2>
-            <p>Gear up for your favorite sport</p>
-        </div>
-        <div class="category">
-            <h2>Electronics</h2>
-            <p>Discover cutting-edge technology</p>
-        </div>
-        <div class="category">
-            <h2>Accessories</h2>
-            <p>Complete your look with stylish accessories</p>
-        </div>
+        <!-- Category content (same as previous code) -->
     </div>
 
     <div class="products">
-        <div class="product">
-            <img src="clothes.jpg" alt="Clothes">
-            <h3>Casual T-shirt</h3>
-            <p>$19.99</p>
-            <button>Add to Cart</button>
+        <div class="product" id="product1">
+            <!-- Product 1 content (same as previous code) -->
         </div>
-        <div class="product">
-            <img src="sport.jpg" alt="Sport Equipment">
-            <h3>Basketball</h3>
-            <p>$29.99</p>
-            <button>Add to Cart</button>
+        <div class="product" id="product2">
+            <!-- Product 2 content (same as previous code) -->
         </div>
-        <div class="product">
-            <img src="electronics.jpg" alt="Electronics">
-            <h3>Wireless Headphones</h3>
-            <p>$99.99</p>
-            <button>Add to Cart</button>
+        <div class="product" id="product3">
+            <!-- Product 3 content (same as previous code) -->
         </div>
-        <div class="product">
-            <img src="accessories.jpg" alt="Accessories">
-            <h3>Sunglasses</h3>
-            <p>$49.99</p>
-            <button>Add to Cart</button>
+        <div class="product" id="product4">
+            <!-- Product 4 content (same as previous code) -->
         </div>
     </div>
 
     <footer>
         <p>&copy; 2022 Bukovce E-Commerce. All rights reserved.</p>
     </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="Product">
+            <h3 id="modal-title"></h3>
+            <p id="modal-price"></p>
+            <button id="modal-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modal-img");
+        var modalTitle = document.getElementById("modal-title");
+        var modalPrice = document.getElementById("modal-price");
+
+        var products = document.getElementsByClassName("product");
+        for (var i = 0; i < products.length; i++) {
+            products[i].addEventListener("click", function() {
+                var imgSrc = this.querySelector("img").src;
+                var title = this.querySelector("h3").textContent;
+                var price = this.querySelector("p").textContent;
+
+                modal.style.display = "block";
+                modalImg.src = imgSrc;
+                modalTitle.textContent = title;
+                modalPrice.textContent = price;
+            });
+        }
+
+        var closeBtn = document.getElementsByClassName("close")[0];
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+    </script>
 </body>
 </html>
