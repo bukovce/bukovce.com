@@ -4,59 +4,42 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bukovec E-Commerce</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-<style>
-    /* Add your fancy and professional CSS styling here */
-</style>
+<title>Bukovce E-Commerce</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="slider">
-    <div>
-        <img src="clothing.jpg" alt="Clothing" data-product="Clothing">
-    </div>
-    <div>
-        <img src="swimming_gear.jpg" alt="Swimming Gear" data-product="Swimming Gear">
-    </div>
-    <div>
-        <img src="football.jpg" alt="Football" data-product="Football">
-    </div>
-    <div>
-        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
-    </div>
-        <div>
-        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
-    </div>
-        <div>
-        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
-    </div>
-        <div>
-        <img src="shirts.jpg" alt="Shirts" data-product="Shirts">
-    </div>
-</div>
-<div class="brand-info">
-    <h1>Bukovec</h1>
-    <p>Your one-stop shop for all your sporting needs. From clothing to swimming gear, football equipment, and stylish shirts, we have it all!</p>
-</div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
+<header>
+  <h1>Welcome to Bukovce</h1>
+</header>
 
-        $('.slider').on('click', 'img', function(){
-            const product = $(this).data('product');
-            // Add your code to handle the purchase of the clicked product
-            console.log(`Buy ${product}`);
-        });
-    });
-</script>
+<div class="categories">
+  <button onclick="filterCategory('clothing')">Bukovce Clothing</button>
+  <button onclick="filterCategory('sports')">Sport Equipments</button>
+  <button onclick="filterCategory('accessories')">Swimming Accessories</button>
+</div>
+
+<div class="products-container">
+  <div class="product">
+    <img src="clothing1.jpg" alt="Bukovce Clothing">
+    <h3>Bukovce T-shirt</h3>
+    <button onclick="buyProduct('Bukovce T-shirt')">Buy Now</button>
+  </div>
+  <div class="product">
+    <img src="sports1.jpg" alt="Football T-shirt">
+    <h3>Football T-shirt</h3>
+    <button onclick="buyProduct('Football T-shirt')">Buy Now</button>
+  </div>
+  <div class="product">
+    <img src="accessory1.jpg" alt="Swimming Cap">
+    <h3>Swimming Cap</h3>
+    <button onclick="buyProduct('Swimming Cap')">Buy Now</button>
+  </div>
+</div>
+
+<footer>
+  <p>Learn more about Bukovce and our mission...</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
