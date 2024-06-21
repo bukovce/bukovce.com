@@ -42,7 +42,7 @@
 
 <script src="script.js"></script>
 </body>
-
+</html>
 /* styles.css */
 body {
   font-family: Arial, sans-serif;
@@ -61,6 +61,35 @@ header {
   text-align: center;
   margin-top: 20px;
 }
+
+.products-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
 // script.js
 function filterCategory(category) {
   const products = document.querySelectorAll('.product');
@@ -76,4 +105,3 @@ function filterCategory(category) {
 function buyProduct(productName) {
   alert(`You are buying: ${productName}. Payment functionality coming soon!`);
 }
-</html>
